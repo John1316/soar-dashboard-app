@@ -29,7 +29,7 @@ export default function Users({ users }: UserListProps) {
         <div className="">
             {/* User Avatars */}
            
-            <div className="flex items-center justify-between space-x-4">
+            <div className="flex items-center justify-between gap-[24px]">
                 {visibleUsers.map((user) => <UserItem
                     key={user.key}
                     avatar={user.avatar}
@@ -45,8 +45,8 @@ export default function Users({ users }: UserListProps) {
             {/* Arrow Button (conditionally rendered) */}
 
             {/* Amount Input & Send Button */}
-            <div className="flex items-center gap-[24px] mt-[30px]">
-                    <p className="users__form--label">Write Amount</p>
+            <div className="lg:flex items-center gap-[24px] mt-[30px]">
+                    <p className="users__form--label md:mb-0 mb-[16px]">Write Amount</p>
                     <div className="relative w-full">
                         <div className="field">
                             <div className="flex flex-col gap-[4px]">

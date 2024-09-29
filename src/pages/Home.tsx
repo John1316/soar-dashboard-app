@@ -138,8 +138,8 @@ export default function Home() {
   };
   return (
     <main className="home__container">
-      <section className="grid lg:grid-cols-3 gap-[30px] mb-[24px]">
-        <div className="col-span-2">
+      <section className="grid lg:grid-cols-3 grid-cols-1 gap-[30px] mb-[24px]">
+        <div className="lg:col-span-2">
           <div className="flex justify-between mb-[21px]">
             <SectionTitle title="My Cards" />
             <button aria-label="see__all--button" className="see__all">See All</button>
@@ -160,116 +160,20 @@ export default function Home() {
             />
           </div>
         </div>
-        <div className="col-span-1">
+        <div className="lg:col-span-1">
           <RecentTransactions />
         </div>
       </section>
       <section className="mb-[24px]">
-        <div className="grid lg:grid-cols-3 gap-[30px]">
-          <div className="col-span-2">
+        <div className="grid lg:grid-cols-3 grid-cols-1 gap-[30px]">
+          <div className="lg:col-span-2 col-span-12">
             <SectionTitle title="Weekly Activity" className="mb-[20px]" />
             <div className="home__card">
-              {/* <ReactApexChart
-                type="bar"
-                series={[
-                  {
-                    name: "Withdraw",
-                    data: [76, 85, 101, 98, 87, 105, 91],
-                    color: "#232323",
-                  },
-                  {
-                    name: "Diposit",
-                    data: [44, 55, 57, 56, 61, 58, 63],
-                    color: "#396AFF",
-                  },
-                ]}
-                options={{
-                  xaxis: {
-                    categories: [
-                      "Sat",
-                      "Sun",
-                      "Mon",
-                      "Tue",
-                      "Wed",
-                      "Thu",
-                      "Fri",
-                    ],
-                    labels: {
-                      style: {
-                        colors: "#718EBF", // Color of x-axis labels
-                        fontSize: "13px", // Font size of x-axis labels
-                        fontFamily: "Inter, sans-serif", // Font family of x-axis labels,
-                        fontWeight: "400",
-                      },
-                    },
-                  },
-                  plotOptions: {
-                    bar: {
-                      borderRadiusApplication: "end",
-                      columnWidth: "22px",
-                      dataLabels: {
-                        position: "top", // top, center, bottom
-                      },
-                      barHeight: "12px",
-                      borderRadius: 5,
-                    },
-                  },
-                  grid: {
-                    padding: {
-                      left: 12, // Add space between bars
-                      right: 12,
-                    },
-                  },
-                  stroke: {
-                    show: true,
-                    width: 10,
-                    colors: ["transparent"],
-                  },
-                  dataLabels: {
-                    enabled: false,
-                    // formatter:  val => val,
-                    // offsetY: -20,
-                    style: {
-                      fontSize: "12px",
-                      colors: ["#232323", "#396AFF"],
-                    },
-                  },
-                  legend: {
-                    markers: {
-                      shape: "circle", // Set legend markers to circles
-                    },
-                    // Position legend in the top-right corner
-                    position: "top",
-                    horizontalAlign: "right",
-                  },
-                  yaxis: {
-                    opposite: false,
-                    labels: {
-                      style: {
-                        colors: "#718EBF", // Color of x-axis labels
-                        fontSize: "13px", // Font size of x-axis labels
-                        fontFamily: "Inter, sans-serif", // Font family of x-axis labels,
-                        fontWeight: "400",
-                      },
-                    },
-                  },
-                  fill: {
-                    colors: ["#232323", "#396AFF"],
-                  },
-                  chart: {
-                    toolbar: {
-                      tools: {
-                        download: false,
-                      },
-                    },
-                  },
-                }}
-              ></ReactApexChart> */}
-                <Bar data={data} options={options} />
+               <Bar data={data} options={options} />
 
             </div>
           </div>
-          <div className="col-span-1">
+          <div className="lg:col-span-1 col-span-12">
             <SectionTitle title="Expense Statistics" className="mb-[20px]" />
             <div className="home__card">
               <PolarArea
@@ -336,7 +240,7 @@ export default function Home() {
       </section>
       <section>
         <div className="">
-          <div className="grid xl:grid-cols-12 lg:grid-cols-2 gap-[30px]">
+          <div className="grid xl:grid-cols-12 lg:grid-cols-2 grid-cols-1 gap-[30px]">
             <div className="lg:col-span-5 col-span-12">
               <SectionTitle title="Quick Transfer" className="mb-[20px]" />
               <div className="home__card">
