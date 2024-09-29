@@ -5,15 +5,26 @@ import {
   DropdownItem,
   Avatar,
 } from "@nextui-org/react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { FormContext } from "../../../context/FormContext";
 export default function AvatarButton() {
+  const formContext = useContext(FormContext)
+  const {editProfileSettingValues} = formContext as FormContextProps
   return (
     <Dropdown placement="bottom-start">
       <DropdownTrigger>
         <Avatar
           as="button"
-          className="transition-transform p-0"
-          src="/profile.svg"
+          className="transition-transform p-0 bg-white header__right--avatar"
+          src={
+            (() => {
+              if(editProfileSettingValues.avatar){
+                return editProfileSettingValues.avatar
+              }
+              return '/user-avatar.png'
+            })()
+          }
         />
       </DropdownTrigger>
       <DropdownMenu aria-label="Profile Actions" variant="flat">

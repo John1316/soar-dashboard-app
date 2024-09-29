@@ -1,0 +1,45 @@
+.field{
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    &__label{
+        font-family: Inter;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 19.36px;
+        text-align: start;
+        color: var(--main-dark-color);
+    }
+    &__input{
+        font-family: Inter;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 18.15px;
+        text-align: start;
+        border-radius: 15px;
+        border: 1px solid #DFEAF2;
+        background-color: #F5F7FA;
+        color: #8BA3CB;
+        padding: 16px 20px;
+        &::placeholder{
+            color: #8BA3CB;
+        }
+    }
+}
+.avatar{
+    &__container{
+        position: relative;
+        &--button{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 30px;
+            height: 30px;
+            background-color: var(--main-dark-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 100%;
+        }
+    }
+}
