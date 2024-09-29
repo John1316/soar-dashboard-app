@@ -13,7 +13,7 @@ export default function AvatarUploader({
         alt="Avatar"
         className="w-24 h-24 rounded-full object-cover mb-2 border-2 border-gray-300"
         />
-        <label htmlFor="profileUpload"  className="avatar__container--button">
+        <label htmlFor="profileUpload" aria-label="avatar__container--button" className="avatar__container--button">
             <EditIcon />
         </label>
         </div>

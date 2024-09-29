@@ -13,7 +13,7 @@ export default function Sidebar() {
   return (
     <aside className={`sidebar ${isMenuOpen ? `active` : ``}`}>
       <div className="sidebar__logo">
-        <img src='/logo.svg' />
+        <img src='/logo.svg' alt="logo" />
       </div>
       <div className="sidebar__content">
         <SidebarItem icon={<HomeIcon />} link="/" title="Dashboard" />

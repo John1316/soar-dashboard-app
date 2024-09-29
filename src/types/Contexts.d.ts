@@ -1,3 +1,4 @@
+
 type GlobalContextProps = {
     isMenuOpen: boolean,
     handleMenuToggle : () => void
@@ -5,4 +6,5 @@ type GlobalContextProps = {
 type FormContextProps = {
     retrieveFromLocalStorage: () => void,
     editProfileSettingValues: EditProfile,
+    setEditProfileSettingValues: SetStateAction<EditProfile>
 }

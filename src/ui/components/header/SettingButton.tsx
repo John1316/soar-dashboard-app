@@ -2,7 +2,7 @@ import SettingHeaderIcon from '../../../assets/svgs/SettingHeaderIcon'
 
 export default function SettingButton() {
   return (
-    <button className='header__button'>
+    <button aria-label='header__button--setting' className='header__button'>
         <SettingHeaderIcon />
     </button>
   )

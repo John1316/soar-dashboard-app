@@ -12,6 +12,7 @@ export default function Setting() {
 
   const formContext = useContext(FormContext)
   const {
+    setEditProfileSettingValues,
     editProfileSettingValues
   } = formContext as FormContextProps
   const {
@@ -66,6 +67,7 @@ export default function Setting() {
   // Handle form submission
   const onSubmit = (data: any) => {
     saveToLocalStorage(data);
+    setEditProfileSettingValues(data)
     alert('Settings saved successfully!');
   };
 
@@ -190,7 +192,7 @@ export default function Setting() {
                   </div>
                 </div>
                 <div className="flex justify-end mt-[41px]">
-                  <Button type="submit" className="setting__card--button">
+                  <Button type="submit" aria-label="setting__card--button" className="setting__card--button">
                     Save
                   </Button>
                 </div>

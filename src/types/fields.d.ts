@@ -8,7 +8,7 @@ type  InputFieldProps = {
     label: string;
     type?: string;
     placeholder?: string,
-    register: any,
+    register?: any,
     errors: any,
     validation?: any;
 }

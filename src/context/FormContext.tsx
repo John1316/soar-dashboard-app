@@ -40,6 +40,7 @@ export default function FormContextProvider({
     return (
         <FormContext.Provider value={{
             retrieveFromLocalStorage,
+            setEditProfileSettingValues,
             editProfileSettingValues
         }}>
             {children}

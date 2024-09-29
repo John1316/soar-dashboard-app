@@ -7,19 +7,20 @@ import { useContext } from 'react';
 import { Button } from '@nextui-org/react';
 import { GlobalContext } from '../context/GlobalContext';
 
-export default function Header({name}: HeaderProps) {
+export default function Header({ name }: HeaderProps) {
   const globalContext = useContext(GlobalContext)
   const {
     handleMenuToggle
   } = globalContext as GlobalContextProps
   return (
     <header className='header'>
-        <Button 
-          className='header__menu--button lg:hidden' 
-          onClick={handleMenuToggle}
-        >
-          <SidebarBurgerIcon />
-        </Button>
+      <Button
+        aria-label='header__menu--button'
+        className='header__menu--button lg:hidden'
+        onClick={handleMenuToggle}
+      >
+        <SidebarBurgerIcon />
+      </Button>
       <div className='header__left'>
         <h4 className='header__title'>{name}</h4>
         {/* Burger icon for small screens */}

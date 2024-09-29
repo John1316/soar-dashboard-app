@@ -152,3 +152,62 @@
     border-radius: 25px;
     padding: 25px;
 }
+.users{
+    &__slider{
+        &--button{
+            box-shadow: 4px 4px 18px -2px #E7E4E8CC;
+            border-radius: 100%;
+            background-color: #fff;
+            width: 50px;
+            height: 50px;
+            min-width: 50px;
+        }
+    }
+    &__list{
+        &--name{
+            font-family: Inter;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 19.36px;
+            text-align: start;
+            color: var(--main-dark-color);
+        }
+        &--avatar{
+            width: 70px;
+            height: 70px;
+            margin: 0 auto;
+            margin-bottom: 15px;
+        }
+        &--role{
+            font-family: Inter;
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 18.15px;            
+            text-align: start;
+            color: var(--subtitle-color);
+            margin-bottom: 5px;
+        }
+    }
+    &__form{
+        &--label{
+            font-family: Inter;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 19.36px;
+            text-align: start;
+            color: var(--subtitle-color);
+            white-space: nowrap;
+        }
+        &--button{
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 50px;
+            box-shadow: 4px 4px 18px -2px #E7E4E8CC;
+            background-color: var(--main-dark-color);
+            color: #fff;
+            height: 100%;
+        }
+    }
+}
