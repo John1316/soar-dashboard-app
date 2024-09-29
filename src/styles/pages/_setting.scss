@@ -35,7 +35,7 @@
             }
             &[aria-selected="false"]{
                 .setting__card--tab-content{
-                    color: #718EBF;
+                    color: var(--subtitle-color);
                 }
             }
         }
@@ -47,6 +47,10 @@
         }
         &--form{
             padding: 41px 30px;
+            @media screen and (max-width: 768px) {
+                padding: 45px 0px;
+
+            }
         }
         &--button{
             padding: 14px;

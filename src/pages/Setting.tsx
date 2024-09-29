@@ -72,7 +72,7 @@ export default function Setting() {
   // Fetch saved data on component mount
   useEffect(() => {
     if(editProfileSettingValues){
-      console.log("🚀 ~ useEffect ~ editProfileSettingValues:", editProfileSettingValues)
+      // console.log("🚀 ~ useEffect ~ editProfileSettingValues:", editProfileSettingValues)
       reset(editProfileSettingValues)
     }
   }, [editProfileSettingValues]);
@@ -93,9 +93,9 @@ export default function Setting() {
           <Tab key="profile" title="Edit Profile">
             <form onSubmit={handleSubmit(onSubmit)} className="w-full">
               <div className="setting__card--form">
-                <div className="grid grid-cols-12 gap-6 items-start">
+                <div className="grid lg:grid-cols-12 gap-6 items-start">
                   {/* Avatar Uploader */}
-                  <div className="col-span-2  flex items-center justify-center">
+                  <div className="lg:col-span-2 col-span-12 flex items-center justify-center">
                     <AvatarUploader
                       imageUrl={avatarWatch || '/user-avatar.png'}
                       onUpload={handleAvatarUpload}
@@ -103,8 +103,8 @@ export default function Setting() {
                   </div>
 
                   {/* Input Fields */}
-                  <div className="col-span-10 ">
-                    <div className="grid grid-cols-2 gap-[22px]">
+                  <div className="lg:col-span-10 col-span-12">
+                    <div className="grid lg:grid-cols-2 grid-cols-1 gap-[22px]">
                       <InputField
                         register={register}
                         errors={errors}

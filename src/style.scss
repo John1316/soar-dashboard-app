@@ -1,8 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;200;300;400;500;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;900&display=swap');
 @import './styles/components/_Layouts';
 @import './styles/core/_variables';
-@import './styles/pages/_setting';
 @import './styles/components/_fields';
+
+
+@import './styles/pages/_setting';
+@import './styles/pages/_home';
