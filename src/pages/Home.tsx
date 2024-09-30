@@ -248,7 +248,7 @@ export default function Home() {
               </div>
             </div>
             <div className="lg:col-span-7">
-              <SectionTitle title="Quick Transfer" className="mb-[20px]" />
+              <SectionTitle title="Balance History" className="mb-[20px]" />
 
               <div className="home__card w-full">
                 {/* <ReactApexChart

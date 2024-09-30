@@ -159,12 +159,13 @@
         }
         &--page{
             padding: 24px 40px;
-            min-height: 100vh;
+            min-height:calc(100vh - 100px);
+            max-height:calc(100vh - 100px);
+            overflow-y: auto;
+            overflow-x: hidden;
             background-color: #F5F7FA;
             @media screen and (max-width: 660px) {
-                // padding: 24px;
-                // min-height:calc(100vh - 148px);
-
+                padding: 24px;
             }
         }
     }
