@@ -5,7 +5,7 @@ import { Button } from "@nextui-org/react";
 import SendButtonIcon from "../../../assets/svgs/SendButtonIcon";
 
 
-export default function Users({ users }: UserListProps) {
+export default function Users({ users, onSuccess }: UserListProps) {
     const maxVisibleUsers = 3; // Maximum users to display without showing the arrow
     const [currentIndex, setCurrentIndex] = useState(0);
     const [amount, setAmount] = useState('')
@@ -19,7 +19,10 @@ export default function Users({ users }: UserListProps) {
         }, 300); // Match the duration of your animation
     };
 
-
+    function onSendAmount(){
+        setAmount('')
+        onSuccess()
+    }
     // Slice users array to show only the first 3
     const visibleUsers = [
         ...users.slice(currentIndex, currentIndex + maxVisibleUsers),
@@ -29,13 +32,16 @@ export default function Users({ users }: UserListProps) {
         <div className="">
             {/* User Avatars */}
            
-            <div className="flex items-center justify-between gap-[24px]">
+            <div className="flex relative items-center justify-between gap-[24px]">
+                <div className="flex  md:gap-[24px] gap-[21px]">
+
                 {visibleUsers.map((user) => <UserItem
                     key={user.key}
                     avatar={user.avatar}
                     name={user.name}
                     role={user.role}
-                />)}
+                    />)}
+                    </div>
                 {users.length > maxVisibleUsers && (
                     <Button aria-label="users__slider--button" onClick={handleNext} className="users__slider--button w-[50px] h-[50px]">
                         <NextArrowIcon />
@@ -54,13 +60,13 @@ export default function Users({ users }: UserListProps) {
                                 onChange={(event: ChangeEvent<HTMLInputElement>) => setAmount(event.target.value)}
                                 value={amount}
                                 type="number"
-                                    placeholder={"Please enter your amount"}
+                                    placeholder={"Amount"}
                                     className={`field__input focus:outline-none focus:ring-2 focus:ring-blue-500 !rounded-full`}
                                 />
                             </div>
                         </div>
 
-                        <Button aria-label="users__form--button" onClick={()=> setAmount('')} className="users__form--button absolute right-0 top-0 bottom-0">
+                        <Button aria-label="users__form--button" onClick={onSendAmount} className="users__form--button absolute right-0 top-0 bottom-0">
                             Send
                             <SendButtonIcon />
                         </Button>

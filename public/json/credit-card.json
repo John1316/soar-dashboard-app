@@ -1,0 +1,25 @@
+{
+    "creditCards": [
+        {
+            "balance": "$5,200.50",
+            "cardHolder": "John Doe",
+            "validThru": "12/23",
+            "cardNumber": "1234567812345678",
+            "dark": true
+        },
+        {
+            "balance": "$5,00.50",
+            "cardHolder": "John Doe",
+            "validThru": "12/26",
+            "cardNumber": "1234567812345678",
+            "dark": false
+          },
+          {
+            "balance": "$25,00.50",
+            "cardHolder": "John Doe",
+            "validThru": "12/26",
+            "cardNumber": "1234567812345678",
+            "dark": false
+          }
+    ]
+}

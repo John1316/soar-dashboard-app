@@ -1,6 +1,9 @@
+import CardIcon from '../../../assets/svgs/CardIcon';
+import DollarSign from '../../../assets/svgs/DollarSign';
+import PaypalIcon from '../../../assets/svgs/PaypalIcon';
+
 export default function TransactionItem({
-  icon,
-  title,
+title,
   date,
   amount,
   isPositive,
@@ -12,7 +15,15 @@ export default function TransactionItem({
       <div
         className={`transactions__card--item-icon w-[55px] h-[55px]  rounded-full flex items-center justify-center`} style={{backgroundColor: bgColor}}
       >
-        {icon}
+        {(() => {
+          if(title === "Deposit from my Card"){
+            return <CardIcon />
+          }
+          if(title === "Deposit Paypal"){
+            return <PaypalIcon />
+          }
+          return <DollarSign />
+        })()}
       </div>
       {/* Transaction Info */}
       <div className="flex-grow">

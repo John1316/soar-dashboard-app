@@ -104,9 +104,10 @@
                 height: 60px;
                 width: 60px;
                 img{
-                    object-fit: contain;
+                    object-fit: cover;
                     width: 60px;
                     height: 60px;
+                    opacity: 1 !important;
                 }
             }
         &--apps{

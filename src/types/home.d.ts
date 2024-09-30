@@ -10,7 +10,15 @@ type SectionTitle = {
   className?: string;
 };
 type TransactionItemProps = {
-  icon: React.ReactNode;
+  // icon: React.ReactNode;
+  title: string;
+  date: string;
+  amount: string;
+  isPositive: boolean;
+  bgColor: string;
+};
+type TransactionItem = {
+  // icon: React.ReactNode;
   title: string;
   date: string;
   amount: string;
@@ -26,4 +34,5 @@ type User = {
 
 type UserListProps = {
   users: User[];
+  onSuccess: () => void
 };

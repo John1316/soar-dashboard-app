@@ -8,3 +8,9 @@ type FormContextProps = {
     editProfileSettingValues: EditProfile,
     setEditProfileSettingValues: SetStateAction<EditProfile>
 }
+type ResponseModalProps = {
+    type: string, 
+    message: string, 
+    visible:boolean, 
+    onClose: () => void
+}

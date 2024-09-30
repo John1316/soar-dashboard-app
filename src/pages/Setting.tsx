@@ -145,6 +145,7 @@ export default function Setting() {
                       <InputField
                         register={register}
                         errors={errors}
+                        type="date"
                         name="dateOfBirth"
                         label="Date of Birth"
                         validation={{ required: 'Date of Birth is required', pattern: { value: REQUIRED_PATTERN, message: 'Invalid format' } }}                      />

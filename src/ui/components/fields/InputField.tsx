@@ -7,6 +7,8 @@ export default function InputField({
     type = 'text', 
     register,
     errors,
+    minlength = 3 ,
+    maxlength = 50,
     placeholder,
     validation 
 }: InputFieldProps){
@@ -21,6 +23,8 @@ export default function InputField({
             type={type}
             placeholder={initialPlaceholder}
             {...register(name, validation)}
+            minLength={minlength}
+            maxLength={maxlength}
             className={`field__input ${errors[name] ? 'border-red-500' : ''} focus:outline-none focus:ring-2 focus:ring-blue-500`}
         />
         {errors[name] && (

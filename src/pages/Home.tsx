@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import CreditCard from "../ui/components/Home/CreditCard";
+// import CreditCard from "../ui/components/Home/CreditCard";
 import RecentTransactions from "../ui/components/Home/RecentTransactions";
 import SectionTitle from "../ui/components/Home/SectionTitle";
 import Users from "../ui/components/Home/Users";
@@ -16,6 +16,15 @@ import {
   Legend,
 } from "chart.js";
 import LineChartSection from "../ui/components/Home/LineChartSection";
+import { useEffect, useState } from "react";
+import { statisticsService } from "../services/statistics";
+// import { NavLink } from "react-router-dom";
+// import { Button } from "@nextui-org/react";
+import { RecentTransactionsService } from "../services/RecentTransactions";
+import ResponseModal from "../ui/components/ResponseModal";
+import { CardService } from "../services/Cards";
+import Loader from "../ui/components/Loader";
+import CreditCardSection from "../ui/components/Home/CreditCardSection";
 
 // Register the required components
 ChartJS.register(
@@ -29,10 +38,16 @@ ChartJS.register(
   Title
 );
 export default function Home() {
+  const [loading, setLoading] = useState<boolean>(true); // State for loading
+
+  const [statistics, setStatistics] = useState<any>(null)
+  const [recentTransactions, setRecentTransactions] = useState<any>(null)
+  const [creditCards, setCreditCards] = useState<CreditCardProps[]>([])
+  const [visible, setVisible] = useState<boolean>(false)
   const series = [
     {
       name: "series",
-      data: [120, 400, 300, 350, 250, 300, 120],
+      data: statistics?.balanceHistory,
       color: "#1814F3",
     },
   ];
@@ -136,32 +151,95 @@ export default function Home() {
     barPercentage: 0.4, // Width of each bar relative to the category width
     categoryPercentage: 0.5, // Spacing between bars within a category
   };
-  return (
+
+  async function getStatisticsData() {
+    const responseOfStatistics = await statisticsService()
+    setStatistics(responseOfStatistics || {})
+    console.log("🚀 ~ getStatisticsData ~ responseOfStatistics:", responseOfStatistics)
+  }
+  async function getRecentTransactionsData() {
+    const responseOftransactions = await RecentTransactionsService()
+    setRecentTransactions(responseOftransactions?.transactions || [])
+    console.log("🚀 ~ getRecentTransactionsData ~ responseOftransactions:", responseOftransactions)
+  }
+  async function getCreditCards() {
+    const responseCardService = await CardService()
+    setCreditCards(responseCardService.creditCards || [])
+    // setRecentTransactions(responseOftransactions?.transactions || [])
+    console.log("🚀 ~ responseCardService ~ responseOftransactions:", responseCardService)
+  }
+  // Combined fetch function to handle all data fetching
+  async function fetchAllData() {
+    setLoading(true);
+    try {
+      // Parallel fetching
+      await Promise.allSettled([
+        getRecentTransactionsData(),
+        getStatisticsData(),
+        getCreditCards(),
+      ]);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    } finally {
+      setLoading(false); // Set loading to false when all data is fetched
+    }
+  }
+
+  useEffect(() => {
+    fetchAllData()
+    return () => {
+
+    }
+  }, [])
+
+  return !loading ? (
     <main className="home__container">
       <section className="grid lg:grid-cols-3 grid-cols-1 gap-[30px] mb-[24px]">
         <div className="lg:col-span-2">
-          <div className="flex justify-between mb-[21px]">
+          <CreditCardSection creditCards={creditCards} />
+          {/* <div className="flex justify-between mb-[21px]">
             <SectionTitle title="My Cards" />
-            <button aria-label="see__all--button" className="see__all">See All</button>
+            {creditCards?.length > 2 && <Button to={'/creditCards'} as={NavLink} aria-label="see__all--button" className="see__all">See All</Button>}
           </div>
-          <div className="grid lg:grid-cols-2 grid-cols-1 gap-[30px]">
-            <CreditCard
-              balance="$5,756"
-              cardHolder="Eddy Cusuma"
-              cardNumber="3778411414471234"
-              validThru="12/22"
-            />
-            <CreditCard
-              balance="$5,756"
-              cardHolder="Eddy Cusuma"
-              cardNumber="3778411414471234"
-              validThru="12/22"
-              dark={false}
-            />
-          </div>
+          <Swiper
+            spaceBetween={20} // Space between slides
+            slidesPerView={1.2} // Default slides per view (for mobile)
+            breakpoints={{
+              // Breakpoint for larger screens
+              1024: {
+                spaceBetween: 30,
+                slidesPerView: 2, // Show 2 slides on large screens
+              }
+            }}
+            draggable={true}
+          >
+            {creditCards?.length
+              ? creditCards.slice(0, 2).map((credit: CreditCardProps, index: number) => (
+                <SwiperSlide key={index}>
+                  <CreditCard
+                    balance={credit.balance}
+                    cardHolder={credit.cardHolder}
+                    cardNumber={credit.cardNumber}
+                    validThru={credit.validThru}
+                    dark={index % 2 === 0}
+                  />
+                </SwiperSlide>
+              ))
+              : ""}
+          </Swiper> */}
+          {/* <div className="grid lg:grid-cols-2 grid-cols-1 gap-[30px]">
+            {creditCards?.length ? creditCards.slice(0,2).map((credit: CreditCardProps, index: number) => <CreditCard
+              balance={credit.balance}
+              cardHolder={credit.cardHolder}
+              cardNumber={credit.cardNumber}
+              validThru={credit.validThru}
+              dark={index % 2 === 0}
+            />): ""}
+            
+          </div> */}
         </div>
         <div className="lg:col-span-1">
-          <RecentTransactions />
+          <RecentTransactions transactions={recentTransactions} />
         </div>
       </section>
       <section className="mb-[24px]">
@@ -169,7 +247,7 @@ export default function Home() {
           <div className="lg:col-span-2">
             <SectionTitle title="Weekly Activity" className="mb-[20px]" />
             <div className="home__card">
-               <Bar data={data} options={options} />
+              <Bar data={data} options={options} />
 
             </div>
           </div>
@@ -179,7 +257,7 @@ export default function Home() {
               <PolarArea
                 options={{
                   responsive: true,
-                  
+
                   plugins: {
                     legend: {
                       position: "top", // Position of the legend,
@@ -223,7 +301,7 @@ export default function Home() {
                   ],
                   datasets: [
                     {
-                      data: [11, 16, 12, 10],
+                      data: statistics?.expenses,
                       backgroundColor: [
                         "#343C6A",
                         "#FC7900",
@@ -244,67 +322,20 @@ export default function Home() {
             <div className="lg:col-span-5">
               <SectionTitle title="Quick Transfer" className="mb-[20px]" />
               <div className="home__card">
-                <Users users={users} />
+                <Users users={users} onSuccess={() => setVisible(true)} />
               </div>
             </div>
             <div className="lg:col-span-7">
               <SectionTitle title="Balance History" className="mb-[20px]" />
 
               <div className="home__card w-full">
-                {/* <ReactApexChart
-                  options={{
-                    dataLabels: {
-                      enabled: false,
-                    },
-                    stroke: {
-                      curve: "smooth",
-                    },
-                    xaxis: {
-                      categories: [
-                        "Sat",
-                        "Sun",
-                        "Mon",
-                        "Tue",
-                        "Wed",
-                        "Thu",
-                        "Fri",
-                      ],
-                      labels: {
-                        style: {
-                          colors: "#718EBF", // Color of x-axis labels
-                          fontSize: "13px", // Font size of x-axis labels
-                          fontFamily: "Inter, sans-serif", // Font family of x-axis labels,
-                          fontWeight: "400",
-                        },
-                      },
-                    },
-                    yaxis: {
-                      labels: {
-                        style: {
-                          colors: "#718EBF", // Color of x-axis labels
-                          fontSize: "13px", // Font size of x-axis labels
-                          fontFamily: "Inter, sans-serif", // Font family of x-axis labels,
-                          fontWeight: "400",
-                        },
-                      },
-                    },
-                    tooltip: {
-                      enabled: false,
-                      x: {
-                        format: "dd/MM/yy HH:mm",
-                      },
-                    },
-                  }}
-                  height={200}
-                  series={series}
-                  type="area"
-                /> */}
                 <LineChartSection series={series} />
               </div>
             </div>
           </div>
         </div>
       </section>
+      <ResponseModal message="Success" type="success" onClose={() => setVisible(false)} visible={visible} />
     </main>
-  );
+  ) : <Loader />;
 }

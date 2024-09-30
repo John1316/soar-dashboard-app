@@ -16,6 +16,9 @@ export default function AvatarButton() {
       <DropdownTrigger>
         <Avatar
           as="button"
+          classNames={{
+            img: '!opacity-1'
+          }}
           className="transition-transform p-0 bg-white header__right--avatar"
           src={
             (() => {

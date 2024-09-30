@@ -5,6 +5,8 @@ type AvatarUploaderProps = {
 }
 type  InputFieldProps = {
     name: string;
+    minlength?: number;
+    maxlength?: number;
     label: string;
     type?: string;
     placeholder?: string,

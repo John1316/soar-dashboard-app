@@ -108,6 +108,8 @@
     line-height: 20.57px;
     text-align: start;
     color: var(--title-color);
+    background-color: transparent;
+    height: auto;
 }
 .transactions{
     &__card{
@@ -155,6 +157,9 @@
     background-color: #fff;
     border-radius: 25px;
     padding: 25px;
+    @media screen and (max-width: 660px) {
+        padding: 20px 18px;
+    }
 }
 .users{
     &__slider{
@@ -165,9 +170,17 @@
             width: 50px;
             height: 50px;
             min-width: 50px;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
         }
     }
-    &__list{
+    &__item{
+        min-width: 80px;
+        @media screen and (max-width: 660px) {
+            min-width: 50px;
+        }
         &--name{
             font-family: Inter;
             font-size: 16px;
@@ -175,12 +188,29 @@
             line-height: 19.36px;
             text-align: center;
             color: var(--main-dark-color);
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            width: 100%;
+            @media screen and (max-width: 660px) {
+                font-size: 12px;
+                white-space: nowrap;
+            }
         }
         &--avatar{
+            min-width: 70px;
+            min-height: 70px;
+
             width: 70px;
             height: 70px;
             margin: 0 auto;
             margin-bottom: 15px;
+            @media screen and (max-width: 660px) {
+                min-width: 50px;
+                min-height: 50px;
+                width: 50px;
+                height: 50px;
+            }
         }
         &--role{
             font-family: Inter;
@@ -190,6 +220,10 @@
             text-align: start;
             color: var(--subtitle-color);
             margin-bottom: 5px;
+            @media screen and (max-width: 660px) {
+                font-size: 12px;
+                white-space: nowrap;
+            }
         }
     }
     &__form{
