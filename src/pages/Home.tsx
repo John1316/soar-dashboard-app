@@ -166,14 +166,14 @@ export default function Home() {
       </section>
       <section className="mb-[24px]">
         <div className="grid lg:grid-cols-3 grid-cols-1 gap-[30px]">
-          <div className="lg:col-span-2 col-span-12">
+          <div className="lg:col-span-2">
             <SectionTitle title="Weekly Activity" className="mb-[20px]" />
             <div className="home__card">
                <Bar data={data} options={options} />
 
             </div>
           </div>
-          <div className="lg:col-span-1 col-span-12">
+          <div className="lg:col-span-1">
             <SectionTitle title="Expense Statistics" className="mb-[20px]" />
             <div className="home__card">
               <PolarArea
@@ -241,13 +241,13 @@ export default function Home() {
       <section>
         <div className="">
           <div className="grid xl:grid-cols-12 lg:grid-cols-2 grid-cols-1 gap-[30px]">
-            <div className="lg:col-span-5 col-span-12">
+            <div className="lg:col-span-5">
               <SectionTitle title="Quick Transfer" className="mb-[20px]" />
               <div className="home__card">
                 <Users users={users} />
               </div>
             </div>
-            <div className="lg:col-span-7 col-span-12">
+            <div className="lg:col-span-7">
               <SectionTitle title="Quick Transfer" className="mb-[20px]" />
 
               <div className="home__card w-full">
