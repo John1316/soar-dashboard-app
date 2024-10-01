@@ -42,7 +42,6 @@ npm  run dev
 Open your browser and navigate to:
 
 ## Table of uses technologies
-
 - [React] - A JavaScript library for building user interfaces
 - [Next.js] - A React framework for server-rendered applications
 - [Swiper] - A modern slider component
