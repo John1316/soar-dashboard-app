@@ -1,3 +1,8 @@
+body{
+    min-height: 100vh;
+    max-height: 100vh;
+    overflow-y: auto;
+}
 .sidebar {
     width: 250px;
     position: fixed;
@@ -198,6 +203,7 @@
 //         }
 //     }
 // }
+
 .layout {
     // min-width: 100vw;
     // min-height: calc(100vh - 100px);
@@ -206,10 +212,10 @@
     &__content {
         //   padding-top: 100px;
         position: relative;
-        min-height: calc(100vh - 100px);
-        max-height: calc(100vh - 100px);
-        overflow-y: auto; // Allow scrolling here
-        overflow-x: hidden;
+        // min-height: calc(100vh - 100px);
+        // max-height: calc(100vh - 100px);
+        // overflow-y: auto; // Allow scrolling here
+        // overflow-x: hidden;
 
         @media screen and (max-width: 768px) {
             margin-left: 0;
