@@ -177,11 +177,11 @@
 //     }
 // }
 .layout {
-    min-width: 100vw;
-    min-height: 100vh;
-  
+    // min-width: 100vw;
+    // min-height: calc(100vh - 100px);
+    padding-top: 100px;
     &__content {
-      padding-top: 100px;
+    //   padding-top: 100px;
       position: relative;
       min-height: 100vh;
     max-height: 100vh;
