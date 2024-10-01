@@ -7,7 +7,9 @@
     p {
         color: #343C6A;
     }
+    border: 1px solid #DFEAF2;
     &__dark{
+        border: 1px solid transparent;
         background: linear-gradient(107.38deg, #5B5A6F 2.61%, #000000 101.2%);
         p {
             color: #fff;
@@ -160,7 +162,7 @@
 .home__container{
     // max-height: calc(100vh - 148px);
     // overflow-y: auto;
-    @media screen and (max-width: 820px) {
+    @media screen and (max-width: 660px) {
         background-color: #fff;
         padding: 24px;
     }
