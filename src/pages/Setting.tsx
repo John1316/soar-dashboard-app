@@ -102,7 +102,7 @@ export default function Setting() {
                   {/* Avatar Uploader */}
                   <div className="lg:col-span-2 col-span-12 flex items-center justify-center">
                     <AvatarUploader
-                      imageUrl={avatarWatch || '/user-avatar.png'}
+                      imageUrl={avatarWatch || '/avatar.svg'}
                       onUpload={handleAvatarUpload}
                     />
                   </div>
@@ -195,7 +195,7 @@ export default function Setting() {
 
                   </div>
                 </div>
-                <div className="flex justify-end mt-[41px]">
+                <div className="flex justify-end lg:mt-[41px] mt-[16px]">
                   <Button type="submit" aria-label="setting__card--button" className="setting__card--button">
                     Save
                   </Button>

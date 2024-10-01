@@ -1,0 +1,27 @@
+{
+    "transactions": [
+    {
+        "icon": "<CardIcon />",
+        "title": "Deposit from my Card",
+        "date": "28 January 2021",
+        "amount": "-$850",
+        "isPositive": false,
+        "bgColor": "#FFF5D9"
+    },
+    {
+        "icon": "<PaypalIcon />",
+        "title": "Deposit Paypal",
+        "date": "25 January 2021",
+        "amount": "+$2,500",
+        "isPositive": true,
+        "bgColor": "#E7EDFF"
+    },
+    {
+        "icon": "<DollarSign />",
+        "title": "Jemi Wilson",
+        "date": "21 January 2021",
+        "amount": "+$5,400",
+        "isPositive": true,
+        "bgColor": "#DCFAF8"
+    }
+]}

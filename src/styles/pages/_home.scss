@@ -100,6 +100,10 @@
     line-height: 26.63px;
     text-align: start;
     color: var(--title-color);
+    @media screen and (max-width: 660px) {
+        font-size: 16px;
+        line-height: 19.36px;
+    }
 }
 .see__all{
     font-family: Inter;
@@ -133,6 +137,10 @@
                 text-align: start;
                 color: var(--main-dark-color);
                 margin-bottom: 8px;
+                @media screen and (max-width: 660px) {
+                    font-size: 14px;
+                    line-height: 16.94px;
+                }
             }
             &-text{
                 font-family: Inter;
@@ -141,6 +149,10 @@
                 line-height: 18.15px;
                 text-align: start;
                 color: var(--subtitle-color);
+                @media screen and (max-width: 660px) {
+                    font-size: 12px;
+                    line-height: 14.52px;
+                }
             }
         }
     }
@@ -148,10 +160,10 @@
 .home__container{
     // max-height: calc(100vh - 148px);
     // overflow-y: auto;
-    // @media screen and (max-width: 768px) {
-    //     max-height: calc(100vh - 148px);
-
-    // }
+    @media screen and (max-width: 820px) {
+        background-color: #fff;
+        padding: 24px;
+    }
 }
 .home__card{
     background-color: #fff;
@@ -159,6 +171,8 @@
     padding: 25px;
     @media screen and (max-width: 660px) {
         padding: 20px 18px;
+        background-color: transparent;
+
     }
 }
 .users{
@@ -247,5 +261,10 @@
             color: #fff;
             height: 100%;
         }
+    }
+}
+.credit_section{
+    @media screen and (max-width: 660px) {
+        padding: 24px;
     }
 }

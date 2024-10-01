@@ -18,7 +18,8 @@ export default function MyCreditCards() {
         }
       }, [])
   return (
-    <section className="grid lg:grid-cols-3 grid-cols-1 gap-[30px] mb-[24px]">
+    <section className='credit_section'>
+      <div className="grid lg:grid-cols-3 grid-cols-1 gap-[30px] mb-[24px]">
 
         {creditCards?.length ? creditCards.map((credit: CreditCardProps, index: number) => <CreditCard
           balance={credit.balance}
@@ -26,14 +27,16 @@ export default function MyCreditCards() {
           cardNumber={credit.cardNumber}
           validThru={credit.validThru}
           dark={index % 2 === 0}
-        />): ""}
+        />) : ""}
         {/* <CreditCard
-          balance="$5,756"
-          cardHolder="Eddy Cusuma"
-          cardNumber="3778411414471234"
-          validThru="12/22"
-          dark={false}
-        /> */}
-  </section>
+            balance="$5,756"
+            cardHolder="Eddy Cusuma"
+            cardNumber="3778411414471234"
+            validThru="12/22"
+            dark={false}
+          /> */}
+      </div>
+
+    </section>
   )
 }
