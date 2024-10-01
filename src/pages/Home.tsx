@@ -90,13 +90,13 @@ export default function Home() {
     datasets: [
       {
         label: 'Withdraw',
-        data: [76, 85, 101, 98, 87, 105, 91],
+        data: statistics?.withdraw || [76, 85, 101, 98, 87, 105, 91],
         backgroundColor: '#232323',
         borderRadius: 5, // Rounded bar corners
       },
       {
         label: 'Deposit',
-        data: [44, 55, 57, 56, 61, 58, 63],
+        data: statistics?.deposit || [44, 55, 57, 56, 61, 58, 63],
         backgroundColor: '#396AFF',
         borderRadius: 5, // Rounded bar corners
       },
