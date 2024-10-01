@@ -20,101 +20,33 @@ Ensure you have the following installed on your machine:
 ### Steps to Install
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/your-repo-name.git
+   git clone https://github.com/John1316/soar-dashboard-app
 Navigate to the project directory:
 
-bash
-Copy code
-cd your-repo-name
+2. **Change the repository**:
+   ```bash
+cd soar-dashboard-app
 Install dependencies: If using npm:
 
-bash
-Copy code
+3. **Install the dependencies**:
+   ```bash
 npm install
 Or if using yarn:
 
-bash
-Copy code
-yarn install
-Running the Project
-After installing the dependencies, you can start the development server.
 
-Steps to Run
-Start the development server: If using npm:
+## Steps to Run `-- Start the development server: If using npm: -`
 
-bash
-Copy code
-npm run dev
-Or if using yarn:
-
-bash
-Copy code
-yarn dev
+4. **Run Local**:
+   ```bash
+npm  run dev
 Open your browser and navigate to:
 
-arduino
-Copy code
-http://localhost:3000
-This will run the project in development mode, with hot reloading enabled for a smoother development experience.
+## Table of uses technologies
 
-Building the Project
-To prepare your project for production, you'll need to build it.
-
-Steps to Build
-Build the project: If using npm:
-bash
-Copy code
-npm run build
-Or if using yarn:
-bash
-Copy code
-yarn build
-This command will bundle your project into static files for production, optimized for speed and performance.
-
-Starting the Built Project
-After building the project, you can start serving it in production mode.
-
-Steps to Start
-Run the production server: If using npm:
-
-bash
-Copy code
-npm run start
-Or if using yarn:
-
-bash
-Copy code
-yarn start
-Open your browser and navigate to:
-
-arduino
-Copy code
-http://localhost:3000
-This will start your project in production mode, running the optimized and bundled build.
-
-Project Structure
-A brief overview of the project's file and folder structure (customize as needed):
-
-bash
-Copy code
-your-repo-name/
-├── public/           # Static files (e.g., images, favicon)
-├── src/              # Source code
-│   ├── components/   # Reusable components
-│   ├── pages/        # Pages for routing
-│   ├── services/     # API service calls
-│   ├── assets/       # Assets like SVGs, images, styles
-│   └── ...           # Other folders
-├── .env              # Environment variables
-├── package.json      # Project metadata and dependencies
-├── README.md         # Project documentation
-└── ...               # Other configuration files
-Technologies Used
-A list of the main technologies and tools used in the project (customize as needed):
-
-React - A JavaScript library for building user interfaces
-Next.js - A React framework for server-rendered applications
-Swiper - A modern slider component
-NextUI - A React component library for styling
-TypeScript (if applicable) - Strongly typed programming language that builds on JavaScript
-CSS/SCSS Modules - Styling approach for scoped styles
+- [React] - A JavaScript library for building user interfaces
+- [Next.js] - A React framework for server-rendered applications
+- [Swiper] - A modern slider component
+- [NextUI] - A React component library for styling
+- [TypeScript] (if applicable) - Strongly typed programming language that builds on JavaScript
+- [CSS/SCSS-Modules] - Styling approach for scoped styles
+- [Tailwind] - Tailwind css framework
