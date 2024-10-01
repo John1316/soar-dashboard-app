@@ -9,6 +9,10 @@
         line-height: 19.36px;
         text-align: start;
         color: var(--main-dark-color);
+        @media screen and (max-width: 660px) {
+            font-size: 13px;
+            line-height: 15.73px;
+        }
     }
     &__input{
         font-family: Inter;
@@ -23,6 +27,10 @@
         padding: 16px 20px;
         &::placeholder{
             color: #8BA3CB;
+        }
+        @media screen and (max-width: 660px) {
+            line-height: 14.52px;
+            font-size: 12px;
         }
     }
 }

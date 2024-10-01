@@ -25,23 +25,20 @@ export default function AvatarButton() {
               if(editProfileSettingValues.avatar){
                 return editProfileSettingValues.avatar
               }
-              return '/user-avatar.png'
+              return '/avatar.svg'
             })()
           }
         />
       </DropdownTrigger>
-      <DropdownMenu aria-label="Profile Actions" variant="flat">
+      {editProfileSettingValues?.email && <DropdownMenu aria-label="Profile Actions" variant="flat">
         <DropdownItem key="profile" className="h-14 gap-2">
           <p className="font-semibold">Signed in as</p>
-          <p className="font-semibold">Test@example.com</p>
+          <p className="font-semibold">{editProfileSettingValues?.email.slice(0,25) || ""}</p>
         </DropdownItem>
         <DropdownItem key="settings">
-          <Link to={"setting"}>My Settings</Link>
+          <Link to={"/setting"}>My Settings</Link>
         </DropdownItem>
-        <DropdownItem key="logout" color="danger">
-          Log Out
-        </DropdownItem>
-      </DropdownMenu>
+      </DropdownMenu>}
     </Dropdown>
   );
 }

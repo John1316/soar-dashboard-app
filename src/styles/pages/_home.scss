@@ -100,6 +100,10 @@
     line-height: 26.63px;
     text-align: start;
     color: var(--title-color);
+    @media screen and (max-width: 660px) {
+        font-size: 16px;
+        line-height: 19.36px;
+    }
 }
 .see__all{
     font-family: Inter;
@@ -133,6 +137,10 @@
                 text-align: start;
                 color: var(--main-dark-color);
                 margin-bottom: 8px;
+                @media screen and (max-width: 660px) {
+                    font-size: 14px;
+                    line-height: 16.94px;
+                }
             }
             &-text{
                 font-family: Inter;
@@ -141,6 +149,10 @@
                 line-height: 18.15px;
                 text-align: start;
                 color: var(--subtitle-color);
+                @media screen and (max-width: 660px) {
+                    font-size: 12px;
+                    line-height: 14.52px;
+                }
             }
         }
     }
