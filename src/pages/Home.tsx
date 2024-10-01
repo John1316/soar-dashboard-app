@@ -155,18 +155,18 @@ export default function Home() {
   async function getStatisticsData() {
     const responseOfStatistics = await statisticsService()
     setStatistics(responseOfStatistics || {})
-    console.log("🚀 ~ getStatisticsData ~ responseOfStatistics:", responseOfStatistics)
+    // console.log("🚀 ~ getStatisticsData ~ responseOfStatistics:", responseOfStatistics)
   }
   async function getRecentTransactionsData() {
     const responseOftransactions = await RecentTransactionsService()
     setRecentTransactions(responseOftransactions?.transactions || [])
-    console.log("🚀 ~ getRecentTransactionsData ~ responseOftransactions:", responseOftransactions)
+    // console.log("🚀 ~ getRecentTransactionsData ~ responseOftransactions:", responseOftransactions)
   }
   async function getCreditCards() {
     const responseCardService = await CardService()
     setCreditCards(responseCardService.creditCards || [])
     // setRecentTransactions(responseOftransactions?.transactions || [])
-    console.log("🚀 ~ responseCardService ~ responseOftransactions:", responseCardService)
+    // console.log("🚀 ~ responseCardService ~ responseOftransactions:", responseCardService)
   }
   // Combined fetch function to handle all data fetching
   async function fetchAllData() {

@@ -2,13 +2,15 @@
 
 import { Tabs, Tab, Button } from "@nextui-org/react";
 import InputField from "../ui/components/fields/InputField";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import AvatarUploader from "../ui/components/fields/AvatarUploader";
 import { useForm } from "react-hook-form";
 import { REQUIRED_PATTERN } from "../constants/FieldsConstants";
 import { FormContext } from "../context/FormContext";
+import ResponseModal from "../ui/components/ResponseModal";
 
 export default function Setting() {
+  const [visible, setVisible] = useState<boolean>(false)
 
   const formContext = useContext(FormContext)
   const {
@@ -68,7 +70,8 @@ export default function Setting() {
   const onSubmit = (data: any) => {
     saveToLocalStorage(data);
     setEditProfileSettingValues(data)
-    alert('Settings saved successfully!');
+    setVisible(true)
+    // alert('Settings saved successfully!');
   };
 
   // Fetch saved data on component mount
@@ -208,6 +211,12 @@ export default function Setting() {
           </Tab>
         </Tabs>
       </div>
+      <ResponseModal 
+      message="Success" 
+      type="success" 
+      onClose={() => setVisible(false)} 
+      visible={visible} />
+
     </div>
   )
 }
