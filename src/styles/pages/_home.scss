@@ -160,10 +160,10 @@
 .home__container{
     // max-height: calc(100vh - 148px);
     // overflow-y: auto;
-    // @media screen and (max-width: 768px) {
-    //     max-height: calc(100vh - 148px);
-
-    // }
+    @media screen and (max-width: 820px) {
+        background-color: #fff;
+        padding: 24px;
+    }
 }
 .home__card{
     background-color: #fff;
@@ -171,6 +171,8 @@
     padding: 25px;
     @media screen and (max-width: 660px) {
         padding: 20px 18px;
+        background-color: transparent;
+
     }
 }
 .users{
@@ -259,5 +261,10 @@
             color: #fff;
             height: 100%;
         }
+    }
+}
+.credit_section{
+    @media screen and (max-width: 660px) {
+        padding: 24px;
     }
 }
