@@ -194,8 +194,8 @@ export default function Home() {
 
   return !loading ? (
     <main className="home__container">
-      <section className="grid lg:grid-cols-3 grid-cols-1 gap-[30px] mb-[24px]">
-        <div className="lg:col-span-2">
+      <section className="grid xl:grid-cols-3 grid-cols-1 gap-[30px] mb-[24px]">
+        <div className="xl:col-span-2">
           <CreditCardSection creditCards={creditCards} />
           {/* <div className="flex justify-between mb-[21px]">
             <SectionTitle title="My Cards" />
@@ -238,20 +238,20 @@ export default function Home() {
             
           </div> */}
         </div>
-        <div className="lg:col-span-1">
+        <div className="xl:col-span-1">
           <RecentTransactions transactions={recentTransactions} />
         </div>
       </section>
       <section className="mb-[24px]">
-        <div className="grid lg:grid-cols-3 grid-cols-1 gap-[30px]">
-          <div className="lg:col-span-2">
+        <div className="grid xl:grid-cols-3 grid-cols-1 gap-[30px]">
+          <div className="xl:col-span-2">
             <SectionTitle title="Weekly Activity" className="mb-[20px]" />
             <div className="home__card">
               <Bar data={data} options={options} />
 
             </div>
           </div>
-          <div className="lg:col-span-1">
+          <div className="xl:col-span-1">
             <SectionTitle title="Expense Statistics" className="mb-[20px]" />
             <div className="home__card">
               <PolarArea
@@ -318,14 +318,14 @@ export default function Home() {
       </section>
       <section>
         <div className="">
-          <div className="grid xl:grid-cols-12 lg:grid-cols-2 grid-cols-1 gap-[30px]">
-            <div className="lg:col-span-5">
+          <div className="grid xl:grid-cols-12 lg:grid-cols-1 grid-cols-1 gap-[30px]">
+            <div className="xl:col-span-5">
               <SectionTitle title="Quick Transfer" className="mb-[20px]" />
               <div className="home__card">
                 <Users users={users} onSuccess={() => setVisible(true)} />
               </div>
             </div>
-            <div className="lg:col-span-7">
+            <div className="xl:col-span-7">
               <SectionTitle title="Balance History" className="mb-[20px]" />
 
               <div className="home__card w-full">
