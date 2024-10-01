@@ -177,8 +177,8 @@
 //     }
 // }
 .layout {
-    min-width: 100vw;
-    min-height: 100vh;
+    // min-width: 100vw;
+    // min-height: calc(100vh - 100px);
   
     &__content {
       padding-top: 100px;
