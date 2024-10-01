@@ -20,26 +20,31 @@ Ensure you have the following installed on your machine:
 ### Steps to Install
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/John1316/soar-dashboard-app ```
+   git clone https://github.com/John1316/soar-dashboard-app
 Navigate to the project directory:
 
+
+### Steps to Change directory
 2. **Change the repository**:
    ```bash
-cd soar-dashboard-app ```
+cd soar-dashboard-app
 Install dependencies: If using npm:
 
+### Steps to install
 3. **Install the dependencies**:
    ```bash
-npm install ```
-Or if using yarn:
+npm install
 
 
-## Steps to Run `-- Start the development server: If using npm: -`
-
+## Steps to Run 
 4. **Run Local**:
    ```bash
-npm  run dev ```
-Open your browser and navigate to:
+npm  run dev
+
+## Steps to Run Build 
+4. **Run Build**:
+   ```bash
+npm  run build
 
 ## Table of uses technologies
 - [React] - A JavaScript library for building user interfaces
