@@ -61,7 +61,7 @@ export default function Users({ users, onSuccess }: UserListProps) {
                                 value={amount}
                                 type="number"
                                     placeholder={"Amount"}
-                                    className={`field__input focus:outline-none focus:ring-2 focus:ring-blue-500 !rounded-full`}
+                                    className={`field__input focus:outline-none focus:ring-2 focus:ring-blue-500 !rounded-full w-full`}
                                 />
                             </div>
                         </div>
