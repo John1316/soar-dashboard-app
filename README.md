@@ -19,38 +19,38 @@ Ensure you have the following installed on your machine:
 
 ### Steps to Install
 1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/John1316/soar-dashboard-app
+   ```
+   git clone https://github.com/John1316/soar-dashboard-app 
+   
 Navigate to the project directory:
 
-
-### Steps to Change directory
+### Steps to Change directory:
 2. **Change the repository**:
-   ```bash
+```   
 cd soar-dashboard-app
+```
 Install dependencies: If using npm:
 
 ### Steps to install
 3. **Install the dependencies**:
-   ```bash
+```
 npm install
-
+```
 
 ## Steps to Run 
 4. **Run Local**:
-   ```bash
+```
 npm  run dev
-
-## Steps to Run Build 
-4. **Run Build**:
-   ```bash
+```
+### Steps to Run Build 
+5. **Run Build**:
+```
 npm  run build
-
+```
 ## Table of uses technologies
-- [React] - A JavaScript library for building user interfaces
-- [Next.js] - A React framework for server-rendered applications
-- [Swiper] - A modern slider component
-- [NextUI] - A React component library for styling
-- [TypeScript] (if applicable) - Strongly typed programming language that builds on JavaScript
-- [CSS/SCSS-Modules] - Styling approach for scoped styles
-- [Tailwind] - Tailwind css framework
+- [React](https://react.dev) - A JavaScript library for building user interfaces
+- [Swiper](https://swiperjs.com) - A modern slider component
+- [NextUI](https://nextui.org) - A React component library for styling
+- [TypeScript]() (if applicable) - Strongly typed programming language that builds on JavaScript
+- [CSS/SCSS-Modules](https://en.bem.info/methodology) - Styling approach for scoped styles - BEM strategy
+- [Tailwind](https://tailwindcss.com) - Tailwind css framework
