@@ -1,37 +1,45 @@
-.sidebar{
+.sidebar {
     width: 250px;
     position: fixed;
     min-height: 100vh;
     background-color: #fff;
+    top: 0;
     transition: .3s ease all;
     backface-visibility: hidden;
     // background-color: var(--main-color) ;
-    border-right: 2px solid var(--main-color) ;
+    border-right: 2px solid var(--main-color);
     z-index: 9999;
+
     @media screen and (max-width: 820px) {
         left: -250px;
-        &.active{
+
+        &.active {
             left: 0;
         }
     }
-    &__logo{
+
+    &__logo {
         display: flex;
         align-items: center;
         justify-content: center;
         height: 100px;
-        img{
+
+        img {
             height: 35px;
             width: 167px;
         }
     }
-    &__content{
+
+    &__content {
         min-height: calc(100vh - 100px);
         max-height: calc(100vh - 100px);
         overflow-y: auto;
-        &--item{
+
+        &--item {
             // height: 60px;
             padding: 18px 44px;
-            &-text{
+
+            &-text {
                 font-family: Inter;
                 font-size: 18px;
                 font-weight: 500;
@@ -39,9 +47,11 @@
                 text-align: start;
                 color: #b1b1b1;
             }
-            &-active{
+
+            &-active {
                 position: relative;
-                &::before{
+
+                &::before {
                     content: "";
                     position: absolute;
                     left: 0;
@@ -53,18 +63,21 @@
                     border-bottom-right-radius: 10px;
                     background-color: #232323;
                 }
-                svg path{
+
+                svg path {
                     fill: #232323;
                 }
-                .sidebar__content--item-text{
+
+                .sidebar__content--item-text {
                     color: #232323;
                 }
             }
         }
     }
-    
-}   
-.header{
+
+}
+
+.header {
     height: 100px;
     width: 100%;
     position: fixed;
@@ -72,7 +85,7 @@
     top: 0;
     right: 0;
     left: 250px;
-    width:calc( 100% - 250px );
+    width: calc(100% - 250px);
     background-color: #fff;
     display: flex;
     align-items: center;
@@ -81,12 +94,14 @@
     border-bottom: 2px solid var(--main-color);
     transition: .3s ease all;
     backface-visibility: hidden;
+
     @media screen and (max-width: 820px) {
         left: 0;
         width: 100%;
 
     }
-    &__title{
+
+    &__title {
         //styleName: Heading one Semibold 28p;
         font-family: Inter;
         font-size: 28px;
@@ -95,22 +110,26 @@
         text-align: start;
 
     }
-    &__right{
+
+    &__right {
         display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            gap: 30px;
-            &--avatar{
-                height: 60px;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 30px;
+
+        &--avatar {
+            height: 60px;
+            width: 60px;
+
+            img {
+                object-fit: cover;
                 width: 60px;
-                img{
-                    object-fit: cover;
-                    width: 60px;
-                    height: 60px;
-                    opacity: 1 !important;
-                }
+                height: 60px;
+                opacity: 1 !important;
             }
-        &--apps{
+        }
+
+        &--apps {
             @media screen and (min-width: 769px) {
                 display: flex;
                 align-items: center;
@@ -119,19 +138,22 @@
             }
         }
     }
-    &__button{
+
+    &__button {
         border-radius: 50%;
         background-color: var(--button-bg-color);
         padding: 12px;
     }
-    &__menu{
-        &--button{
+
+    &__menu {
+        &--button {
             padding: 0;
             background-color: transparent;
             min-width: fit-content;
         }
     }
 }
+
 // .layout{
 //     min-width: 100vw;
 //     min-height: 100vh;
@@ -145,7 +167,7 @@
 //         // top: 100px;
 //         // width:calc( 100% - 250px );
 //         // margin-left: 250px;
-        
+
 //         @media screen and (max-width: 768px) {
 //             margin-left: 0;
 //             width: 100%;
@@ -180,52 +202,53 @@
     // min-width: 100vw;
     // min-height: calc(100vh - 100px);
     padding-top: 100px;
+
     &__content {
-    //   padding-top: 100px;
-      position: relative;
-      min-height: 100vh;
-    max-height: 100vh;
-      overflow-y: auto; // Allow scrolling here
-      overflow-x: hidden;
-  
-      @media screen and (max-width: 768px) {
-        margin-left: 0;
-        width: 100%;
-  
-        &--layer {
-          &-active {
-            background-color: #23232350;
-            position: fixed;
-            inset: 0;
-            z-index: 8888;
-          }
+        //   padding-top: 100px;
+        position: relative;
+        min-height: 100vh;
+        max-height: 100vh;
+        overflow-y: auto; // Allow scrolling here
+        overflow-x: hidden;
+
+        @media screen and (max-width: 768px) {
+            margin-left: 0;
+            width: 100%;
+
+            &--layer {
+                &-active {
+                    background-color: #23232350;
+                    position: fixed;
+                    inset: 0;
+                    z-index: 8888;
+                }
+            }
         }
-      }
-  
-      &--page {
-        padding: 24px 40px;
-        margin-left: 250px;
-        background-color: #F5F7FA;
-  
-        // Ensure the --page section fills the content space and doesn't scroll by itself
-        // height: 100%;
-        // max-height: 100%; 
-        min-height: 100%;
-        overflow: hidden;
-  
-        @media screen and (max-width: 820px) {
-          margin-left: 0;
+
+        &--page {
+            padding: 24px 40px;
+            margin-left: 250px;
+            background-color: #F5F7FA;
+
+            // Ensure the --page section fills the content space and doesn't scroll by itself
+            // height: 100%;
+            // max-height: 100%; 
+            min-height: 100%;
+            overflow: hidden;
+
+            @media screen and (max-width: 820px) {
+                margin-left: 0;
+            }
+
+            @media screen and (max-width: 660px) {
+                padding: 24px;
+            }
         }
-  
-        @media screen and (max-width: 660px) {
-          padding: 24px;
-        }
-      }
     }
-  }
-  
-.search{
-    &__input{
+}
+
+.search {
+    &__input {
         font-family: Inter;
         font-size: 15px;
         font-weight: 400;
@@ -235,8 +258,9 @@
         color: #8BA3CB;
         padding: 14px 24px 14px 60px;
         width: 270px;
+
         // border-radius: 40px;
-        &::placeholder{
+        &::placeholder {
             color: #8BA3CB;
         }
     }
