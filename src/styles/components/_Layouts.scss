@@ -132,6 +132,7 @@
         }
     }
 }
+{/*
 .layout{
     min-width: 100vw;
     min-height: 100vh;
@@ -176,6 +177,53 @@
         }
     }
 }
+    */}
+.layout {
+  min-width: 100vw;
+  min-height: 100vh;
+
+  &__content {
+    padding-top: 100px;
+    position: relative;
+    height: calc(100vh - 100px);
+    overflow-y: auto; // Allow scrolling here
+    overflow-x: hidden;
+
+    @media screen and (max-width: 768px) {
+      margin-left: 0;
+      width: 100%;
+
+      &--layer {
+        &-active {
+          background-color: #23232350;
+          position: fixed;
+          inset: 0;
+          z-index: 8888;
+        }
+      }
+    }
+
+    &--page {
+      padding: 24px 40px;
+      margin-left: 250px;
+      background-color: #F5F7FA;
+
+      // Ensure the --page section fills the content space and doesn't scroll by itself
+      height: 100%;
+      max-height: 100%; 
+      overflow: hidden;
+
+      @media screen and (max-width: 820px) {
+        margin-left: 0;
+      }
+
+      @media screen and (max-width: 660px) {
+        padding: 24px;
+      }
+    }
+  }
+}
+
 .search{
     &__input{
         font-family: Inter;
